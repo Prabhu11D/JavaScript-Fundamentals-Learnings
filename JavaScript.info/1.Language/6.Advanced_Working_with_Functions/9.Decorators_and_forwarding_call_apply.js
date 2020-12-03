@@ -91,5 +91,16 @@ console.log( worker.slow(30, 5) );
 console.log( "Again " + worker.slow(30, 5) );
 
 // ======================   func.apply
+
+// func.call(context, ...args);
+// func.apply(context, args);
+
 // ======================   Borrowing a method
+
+function hashing(){
+    return [].join.call(arguments)
+}
+
+console.log(hashing(10,20,30));
+
 // ======================   Decorators and function properties
