@@ -30,3 +30,13 @@ let a = function(x){
 a(function anon(){
     console.log("Running Anonymous function");
 });
+
+function declaration1(){
+    return true
+}
+let expression1 = function(){
+    return "variable"
+};
+
+console.log(declaration1());
+console.log(expression1());
