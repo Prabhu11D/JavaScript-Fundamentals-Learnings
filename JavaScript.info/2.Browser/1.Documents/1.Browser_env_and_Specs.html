@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Browser Environment and Specs</h1>
+  </body>
+</html>
+
+<script>
+  /**
+   *
+   *     window => DOM
+   *            => BOM
+   *            => JavaScript
+   *
+   */
+
+  function sayHi() {
+    console.log("Hi ✋");
+  }
+
+  window.sayHi();
+  console.log(window.innerWidth + "x" + window.innerHeight);
+
+  // =================== DOM
+  document.body.style.background = "red";
+  setTimeout(() => {
+    document.body.style.background = "";
+  }, 500);
+
+  // - - - CSSOM - object model for CSS
+
+  // ================== BOM
+  // everything except DOM, it is host objects
+
+  console.log(location.href);
+  let redirect = confirm("Do you want to redirect the page to Google?");
+  if (redirect == true) {
+    setTimeout(() => {
+      location.href = "https://google.com";
+    }, 500);
+  }
+</script>

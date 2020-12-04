@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="title">Searching DOM</h2>
+
+    <p>DOM</p>
+    <p>BOM</p>
+
+    <a href="http://example.com/file.zip"></a>
+    <a href="http://ya.ru"></a>
+
+    <div class="contents">
+  <ul class="book">
+    <li class="chapter">Chapter 1</li>
+    <li class="chapter">Chapter 1</li>
+  </ul>
+</div>
+
+    <script>
+      // getElementById
+      let title = document.getElementById("title");
+      title.style.color = "red";
+      // querySelectorAll
+      let p = document.querySelectorAll("p");
+      p.forEach((item) => (item.style.fontSize = "24px"));
+      // querySelector
+
+      // matches
+      for (let elem of document.body.children) {
+        if (elem.matches('a[href$="zip"]')) {
+          alert("The archive reference: " + elem.href);
+        }
+      }
+      // closest
+      let chapter = document.querySelector('.chapter');
+      console.log(chapter.closest('.book'));
+
+      // getElementsBy*
+
+      // Live Collections
+    </script>
+  </body>
+</html>
