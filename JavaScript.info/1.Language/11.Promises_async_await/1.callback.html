@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Callback</h2>
+
+    <script>
+        function loadScript(src, callback){
+            let script = document.createElement('script');
+            script.src = src;
+
+            script.onload = () => callback(script);
+            document.head.append(script);
+        }
+
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js', script => {
+            console.log(`Cool the script ${script.src} is loaded 👍`);
+        });
+
+        // =================   Callback in Callback  ====================
+
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js', script => {
+            console.log(`Cool the script ${script.src} is loaded 👍`);
+            loadScript('../2.JS_Fundamentals/14.switch.js', script => {
+                console.log("Switch.js loaded successfully");
+            });
+        });
+
+        // =================  Handling Errors  ===========================
+
+        function loadScriptError(src, callback){
+            let script = document.createElement('script');
+            script.src = src;
+
+            script.onload = () => callback(null, script);
+            script.onerror = () => callback(new Error("Script loads fail 👎"));
+
+            document.head.append(script);
+        }
+
+        loadScriptError('../2.JS_Fundamentals/14.switch.js', function(error, script){
+            if(error){
+                console.log(error.message);
+            }else{
+                console.log("Script loaded successfully 👍");
+            }
+        });
+
+        // =================  Pyramid of Doom  ======================
+
+    </script>
+</body>
+</html>
