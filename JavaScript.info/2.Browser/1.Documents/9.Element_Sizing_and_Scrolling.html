@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        position: relative;
+      }
+
+      .box {
+        width: 400px;
+        padding: 20px;
+        height: 400px;
+        top: 100px;
+        left: 100px;
+        position: absolute;
+        border: 10px solid rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffffc7;
+        overflow-y: scroll;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 20px;
+      }
+      .box-details {
+        width: 200px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.233);
+        color: rgba(238, 238, 238, 0.828);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 100px;
+        left: 500px;
+        margin-left: 20px;
+      }
+      li {
+        list-style-type: none;
+      }
+    </style>
+    <div class="box">
+      <br /><br />
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum
+      tempore numquam nesciunt quam optio dolor ut doloribus animi, adipisci
+      saepe consequuntur fugiat recusandae placeat, iure ducimus nulla
+      praesentium nobis mollitia!
+    </div>
+    <div class="box-details">dede</div>
+    <script>
+      // Sample Element
+
+      // Geometry
+      const box = document.querySelector(".box");
+      const boxStyle = getComputedStyle(box);
+      const boxDetails = document.querySelector(".box-details");
+
+      let details = `
+           <li> offsetParent = ${box.offsetParent} </li>
+            <li>offsetLeft   = ${box.offsetLeft}</li>
+            <li>offsetTop    = ${box.offsetTop}</li>
+            <li>offsetWidth  = ${box.offsetWidth}</li>
+            <li>offsetHeight = ${box.offsetHeight}</li>
+            <li>clientTop    = ${box.clientTop}</li> 
+            <li>clientLeft   = ${box.clientLeft}</li>
+            <li>clientWidth  = ${box.clientWidth}</li>
+            <li>clientHeight = ${box.clientHeight}</li>
+            <li>scrollWidth  = ${box.scrollWidth}</li>
+            <li>scrollHeight = ${box.scrollHeight}</li>
+            <li>scrollLeft   = ${box.scrollLeft}</li>
+            <li>scrollTop    = ${box.scrollTop}</li>
+           
+                    `;
+
+      box.insertAdjacentHTML("afterbegin", details);
+      document.body.addEventListener("mousemove", (e) => {
+        let coords = `x : ${e.clientX}, y : ${e.clientY}`;
+        boxDetails.textContent = coords;
+      });
+    </script>
+  </body>
+</html>
