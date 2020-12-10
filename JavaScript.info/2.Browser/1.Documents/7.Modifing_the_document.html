@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .alert {
+        padding: 15px;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;
+        color: #3c763d;
+        background-color: #dff0d8;
+      }
+    </style>
+
+    <h2>Modifying the document</h2>
+
+    <ol>
+        <li>One</li>
+        <li>Two</li>
+    </ol>
+
+    <div id="insert">insertAdjacentHTML</div>
+
+    <ul id="fragment">Document fragment</ul>
+    <script>
+      // Example: show a message
+
+      // Create an Element
+      let div = document.createElement("div");
+      let textNode = document.createTextNode("Hi I'm Prabhu");
+      let ol = document.querySelector('ol');
+
+
+      div.className = "alert";
+      div.innerHTML =
+        "<strong>Hi there!</strong> You've read an important message.";
+
+    // Insertion methods
+    document.body.append(div);
+
+    /*
+        node.append()
+        node.prepend()
+        node.before()
+        node.after()
+        node.replaceWith()
+    */
+
+    ol.before("Before ol");
+    ol.after("After ol");
+    ol.prepend("Prepend");
+    ol.append("Append");
+
+    // Insert Adjacent HTML
+    let insert = document.querySelector('#insert');
+    insert.insertAdjacentHTML('beforebegin' , '<p>Before Begin</p>');
+    insert.insertAdjacentHTML('afterbegin' , '<p>After Begin</p>');
+    insert.insertAdjacentHTML('beforeend' , '<p>Before End</p>');
+    insert.insertAdjacentHTML('afterend' , '<p>After End</p>');
+
+    // Node Removal
+    setTimeout(() => {
+        div.remove();
+    }, 2000);
+
+    // CloningNode : Clone Nodes
+    // cloneNode(false) will not include attributes and sub elements
+
+    let divClone = div.cloneNode(true);
+    divClone.querySelector('strong').innerHTML = 'Hello World'
+    div.after(divClone);
+
+
+    // DocumentFragment
+    let fragment = document.querySelector('#fragment');
+    function getList(){
+        let fragment = new DocumentFragment();
+
+        for(let i=0; i<5; i++){
+            let li = document.createElement('li');
+            li.innerHTML = `${i}`;
+            fragment.append(li);
+        }
+
+        return fragment;
+    }
+
+    fragment.append(getList());
+
+    // A word about document write
+    
+    </script>
+  </body>
+</html>
