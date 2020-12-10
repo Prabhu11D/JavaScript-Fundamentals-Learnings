@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .main{
+            width: 100%;
+            height: 40px;
+            background-color: darkred;
+            color: #eee;
+        }
+        button{
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 4px 10px;
+            cursor: pointer;
+        }
+        button:active,
+        button:hover{
+            background-color: rgb(54, 54, 54);
+        }
+        .button{
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+        .scrollTo{
+            position: fixed;
+            top: 10px;
+            left: 110px;
+        }
+        .scrollIntoView{
+            position: fixed;
+            top: 10px;
+            left: 220px;
+        }
+    </style>
+
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <div class="main">Main view viewby scrollIntoView</div>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem reiciendis veniam omnis odio nihil tempora ipsa eaque modi sequi, eos suscipit, aliquam quibusdam illum maxime earum fugit cum ea aliquid!</h2>
+
+    <button class="button">Scroll(0,20)</button>
+    <button class="scrollTo">ScrollTo(0,0)</button>
+    <button class="scrollIntoView">ScrollIntoView(true)</button>
+    <script>
+
+        // width and height of the window
+        console.log('clientWidth', document.documentElement.clientWidth);
+        console.log('clientHeight', document.documentElement.clientHeight);
+        console.log('windowWidth', window.innerWidth);
+        console.log('windowHeight', window.innerHeight);
+
+
+        // width and height of the document
+
+
+        // current scroll
+        console.log('pageXoffset', window.pageXOffset);
+        console.log('pageYoffset', window.pageYOffset);
+
+        // scrollTo, scrollBy, scrollIntoView
+        const button = document.querySelector('.button');
+        button.addEventListener('click', () => {
+            window.scrollBy(0, 20);
+        });
+
+        const scrollTo = document.querySelector('.scrollTo');
+        scrollTo.addEventListener('click', ()=>{
+            window.scrollTo(0,0);
+        });
+
+        const scrollIntoView = document.querySelector('.scrollIntoView');
+        const main = document.querySelector('.main');
+        scrollIntoView.addEventListener('click', ()=> {
+            main.scrollIntoView();
+        });
+
+        // forbid the scroll - overflow -> hidden
+    </script>
+</body>
+</html>
