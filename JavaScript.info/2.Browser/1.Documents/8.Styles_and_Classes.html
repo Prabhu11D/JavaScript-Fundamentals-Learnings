@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="MainPage Body">
+    <h1>Hello</h1>
+    <script>
+      // ClassName and ClassList
+      console.log(document.body.classList.contains("Body"));
+
+      // Element Style
+
+      document.body.style.margin = "0px";
+      const h1 = document.querySelector("h1");
+      h1.style.backgroundColor = "#111";
+      h1.style.color = "#eee";
+
+      // Resetting the Styling Property
+      let p = document.createElement('p');
+      p.innerHTML = "CSSText";
+      h1.after(p);
+
+      p.style.cssText = `
+        background-color: blue;
+        font-size: 20px;
+        color: white;
+        border-radius: 10px;
+      `;
+
+      // Mind the units
+
+      // getComputed Styles
+      let P_Style = getComputedStyle(p);
+      console.log(P_Style);
+    //   alert(P_Style.margin);  // only works in chrome
+    </script>
+  </body>
+</html>
