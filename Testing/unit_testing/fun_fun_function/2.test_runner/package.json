@@ -1,0 +1,15 @@
+{
+  "name": "test_runner",
+  "version": "1.0.0",
+  "description": "first time exploring the jest test runner",
+  "main": "1.app.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "author": "Prabhu",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
