@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                width: 100%;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+            }
+            .grand_parent {
+                background-color: lightseagreen;
+                width: 500px;
+                height: 500px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .parent {
+                width: 350px;
+                height: 350px;
+                background-color: rgb(97, 255, 97);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .child {
+                width: 200px;
+                height: 200px;
+                background-color: rgb(255, 253, 155);
+            }
+        </style>
+        <div class="grand_parent">
+            <div class="parent">
+                <div class="child"></div>
+            </div>
+        </div>
+
+        <script>
+            /***
+             *  Bubbling - descendants to ancestor event passing
+             *
+             */
+            const grandParent = document.querySelector(".grand_parent");
+            const parent = document.querySelector(".parent");
+            const child = document.querySelector(".child");
+
+            function showMessage(message) {
+                console.log(message);
+            }
+
+            grandParent.addEventListener("click", () =>
+                showMessage("Grand Parent"), true
+            );
+            parent.addEventListener("click", () => showMessage("Parent"));
+            child.addEventListener("click", (e) => {
+                // e.stopPropagation();
+                showMessage("Child");
+
+            });
+
+            // Event Target
+            function doubleClick(e) {
+                const message = `this = ${this.classList}, target = ${e.target.className}`;
+                alert(message);
+            }
+            grandParent.addEventListener("dblclick", doubleClick);
+        </script>
+    </body>
+</html>
