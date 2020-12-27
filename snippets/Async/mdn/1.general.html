@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button>Click me</button>
+    <!-- ========================    Asynchronous
+        - doing so many things at a time.
+        - not one by one
+     -->
+
+     <!-- ====================  Blocking Code
+        - bcos - JS is single threaded
+
+      -->
+
+    <!-- =================== Thread
+        - single process
+        - sequentially completing the task one after another
+     -->
+
+    <!-- =================== JS is single threaded
+        - main thread
+        in addition JS have 'worker' thread to process some heavy task
+
+     -->
+
+    <!-- ======================= Asynchronous Code 
+        - worker can't access DOM
+        - browser gives us Promise for asynchronous task
+    
+     -->
+
+     <script>
+      const btn = document.querySelector('button');
+      const worker = new Worker('worker.js');
+
+      btn.addEventListener('click', () => {
+        worker.postMessage('Go!');
+
+        let pElem = document.createElement('p');
+        pElem.textContent = 'This is a newly-added paragraph.';
+        document.body.appendChild(pElem);
+      });
+
+      worker.onmessage = function(e) {
+        console.log(e.data);
+      }
+    </script>
+</body>
+</html>
