@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // =====================  Implicit try and catch
+            let number = new Promise((res, rej) => {
+                res("1");
+            });
+
+            number
+                .then((data) => {
+                    if (typeof data !== "number") {
+                        throw new Error("Result is not a Number");
+                    }
+                    console.log(data * 2);
+                    return data * 2;
+                })
+                .then((data) => {
+                    console.log(data * 4);
+                    return data * 4;
+                })
+                .catch((err) => {
+                    console.error(err.message);
+                });
+
+            // ===================  Rethrowing
+            // the execution: catch -> catch
+            new Promise((resolve, reject) => {
+                throw new Error("Whoops!");
+            })
+                .catch(function (error) {
+                    if (error instanceof URIError) {
+                        // handle it
+                    } else {
+                        console.error("Can't handle such error");
+                        throw error; // throwing this or another error jumps to the next catch
+                    }
+                })
+                .then(function () {
+                    /* doesn't run here */
+                })
+                .catch((error) => {
+                    console.error(`The unknown error has occurred: ${error}`);
+                    // don't return anything => execution goes the normal way
+                });
+
+
+            // ================= Unhandled Error
+            new Promise(res => {
+                throw new Error(" ? ? ? Unhandled Error by Promise");
+            }).then(data => console.log(data));
+
+            window.addEventListener('unhandledrejection', (e)=>{
+                console.log(e.promise);
+                console.log(e.reason);
+            });
+        </script>
+    </body>
+</html>
