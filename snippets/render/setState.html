@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setState</title>
+</head>
+<body>
+    <div>Count : <span class="count"></span></div>
+    <button class="incrementBtn">Increment</button>
+
+    <script>
+        const display = document.querySelector('.count');
+        const button = document.querySelector('.incrementBtn');
+        let count = 0;
+        display.textContent = count;
+
+        button.addEventListener('click', () => {
+            count++;
+            console.log(count);
+            display.textContent = count;
+        })
+    </script>
+</body>
+</html>
