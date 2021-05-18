@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>this</h1>
+    <script>
+      // this in window context
+      console.log(this);
+      this.name = "Prabhu";
+      console.log(this.name);
+      console.log(window.name);
+      console.log(name);
+      console.log("----------------------");
+
+      console.log("this inside in function");
+      function checkThis() {
+        console.log(this);
+      }
+      checkThis();
+      console.log("-----------------------");
+
+      console.log("this inside the object");
+      const person = {
+        checkThis: function () {
+          console.log(this);
+
+          function checkThisAgain() {
+            this.name = "Dipesh";
+            console.log(this);
+          }
+
+          checkThisAgain();
+          console.log(this.name);
+          console.log(window.name);
+        },
+      };
+      person.checkThis();
+
+      const func = person.checkThis;
+      func();
+
+      // this is point to where it is called
+      // it is pointing to callie.
+      console.log("-----------------------");
+
+      /*
+        how to stabilize this keyword
+
+        1. use "use strict" in where you want this
+        2. assign 
+              let self = this;
+              so this is point to self scope.
+
+        * this is always pointing to the callie.
+        * if there is no callie it will point to window object 
+      */
+    </script>
+  </body>
+</html>
