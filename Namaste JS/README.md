@@ -12,3 +12,5 @@
 8. [let & const in JS 🔥Temporal Dead Zone](./8.%20let%20%26%20const%20in%20JS%20%F0%9F%94%A5Temporal%20Dead%20Zone/notes.md)
 9. [BLOCK SCOPE & Shadowing in JS 🔥](./9.%20BLOCK%20SCOPE%20%26%20Shadowing%20in%20JS%20%F0%9F%94%A5/notes.md)
 10. [Closures in JS 🔥](./10.%20Closures%20in%20JS%20%F0%9F%94%A5/notes.md)
+11. [setTimeout + Closures Interview Question 🔥](./11.%20setTimeout%20%2B%20Closures%20Interview%20Question%20%F0%9F%94%A5/notes.md)
+12. [CRAZY JS INTERVIEW 🤯ft. Closures](./12.%20CRAZY%20JS%20INTERVIEW%20%F0%9F%A4%AFft.%20Closures/notes.md)
