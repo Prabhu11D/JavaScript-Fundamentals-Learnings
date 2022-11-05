@@ -2,6 +2,8 @@
 
 ## TOC
 
+### Season 1
+
 1. [How JavaScript Works 🔥& Execution Context](./1.%20How%20JS%20Works/notes.md)
 2. [How JavaScript Code is executed\_ ❤️& Call Stack](./2.%20How%20JavaScript%20Code%20is%20executed_%20%E2%9D%A4%EF%B8%8F%26%20Call%20Stack%20/notes.md)
 3. [Hoisting in JavaScript 🔥(variables & functions)](<./3.%20Hoisting%20in%20JavaScript%20%F0%9F%94%A5(variables%20%26%20functions)/notes.md>)
@@ -21,3 +23,8 @@
 17. [TRUST ISSUES with setTimeout()](<./17.%20TRUST%20ISSUES%20with%20setTimeout()/notes.md>)
 18. [Higher-Order Functions ft. Functional Programming](./18.%20Higher-Order%20Functions%20ft.%20Functional%20Programming/notes.md)
 19. [map, filter & reduce 🙏](./19.%20map%2C%20filter%20%26%20reduce%20%F0%9F%99%8F/notes.md)
+
+### Season 2
+
+20. [Callback Hell](./20.%20Callback%20Hell/notes.md)
+21. [Promises](./21.%20Promises/notes.md)

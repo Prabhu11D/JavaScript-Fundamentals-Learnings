@@ -3,7 +3,7 @@ function calculation() {
     console.log("Calculation Started");
     let i = 0,
       loop = true,
-      number = 1000000000;
+      number = 5;
 
     while (loop) {
       i++;
@@ -17,6 +17,24 @@ function calculation() {
   });
 }
 
+function callbackCalculation(callback) {
+  console.log("Calculation Started 1");
+  let i = 0,
+    loop = true,
+    number = 5;
+
+  while (loop) {
+    i++;
+    if (i === number) {
+      loop = false;
+      console.log("Calculation Finished 1");
+    }
+  }
+
+  callback("Calculated 1");
+
+}
+
 calculation()
   .then((result) => {
     console.log(result);
@@ -25,3 +43,10 @@ calculation()
   .catch((err) => {
     console.log(err);
   });
+
+// callbackCalculation((data) => {
+//   console.log(data);
+//   console.log("Callback finished 1");
+// })
+
+console.log("After calculation()")
