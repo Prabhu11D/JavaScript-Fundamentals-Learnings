@@ -13,6 +13,7 @@ if(phonePrice <= 20000){
 
 
 // Ternary operator ? : 
+// also known as Conditional Operator
 console.log(phonePrice <= 20000 ? "Buy" : "Don't buy");
 
 // Multiple ???

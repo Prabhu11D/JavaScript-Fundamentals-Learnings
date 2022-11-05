@@ -1,3 +1,4 @@
+// "use strict"
 /**
  *  VARIABLE
  *  
@@ -12,35 +13,47 @@
  *          https://javascript.info/variables#name-things-right
  */
 
+// declaring variable and defining (means assigning value)
 let name = "Prabhu";
 console.log(name);
 
+
+// declare multiple variable in single statement.
 let name1 = "Prabhu"
-    , age = 21
-    , message = "I am Fine";
+  , age = 21
+  , message = "I am Fine";
 
-/**
- *  The Variable only declares only once
- *  
- *  let name = "Ammu"; 
- *      cause an error
- * 
- */
 
+//  The Variable only declares only once
+// name is already declared and value is assigned
+// let name = "Ammu";
+
+
+// Variable names (chars, digits, $, _)
 let $ = 10;
 let _ = 20;
-console.log($+_);
+// let 9av = 100; // not start with number
+console.log($ + _);
+
+
+// creating variable without let, var, const
+// uncomment "use strict", then old way of defining will not work
+dummy = "DUMMY"
+console.log(dummy);
+
 
 // CONSTANT
-
 const passion = "Nothing";
+
+// you can't reassign value to const variable
 // passion = "Something"; throw an error
 
-// mostly constant in UPPERCASE
+// mostly known constant are in UPPERCASE
 const RED = "#FF0000";
 const BLUE = '#FFA500';
 
-let red = RED;
+// constant that are unknown and valued at runtime is denoted in camelCase
+const goHead = "";
 
 
 /***
@@ -49,8 +62,8 @@ let red = RED;
  *    let, const => block scope variable
  */
 
-for(var i = 0; i< 5; i++)
-console.log(i)
+for (var i = 0; i < 5; i++)
+  console.log(i)
 
 console.log(i)
 
@@ -66,7 +79,7 @@ console.log(i)
 const A = "A";
 console.log(A);
 
-const particle = {x:200, y:500};
+const particle = { x: 200, y: 500 };
 console.log(particle);
 
 particle.x = 1000; // modifying the elements inside the const
