@@ -28,3 +28,4 @@
 
 20. [Callback Hell](./20.%20Callback%20Hell/notes.md)
 21. [Promises](./21.%20Promises/notes.md)
+22. [Creating a Promise, Chaining & Error Handling](./22.%20Creating%20a%20Promise%2C%20Chaining%20%26%20Error%20Handling/notes.md)
