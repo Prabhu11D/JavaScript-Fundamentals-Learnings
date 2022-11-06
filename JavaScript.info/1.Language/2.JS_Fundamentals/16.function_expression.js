@@ -1,12 +1,23 @@
 /**
  * 
  *          F U N C T I O N     E X P R E S S I O N
+ * 
+ *  : function expressed as value to variable
+ *  : A function is a value representing an “action”
  */
 
+
+/**
+ * 
+ *  FUNCTION IS VALUE
+ */
 let showName = function(name){
     console.log(`Hello ${name}`);
 }
 
+console.log(showName); 
+// it consoles the function as string, 
+// so we think and work like function are like values
 showName("Prabhu");
 
 
@@ -29,7 +40,8 @@ console.log(sum(20,20));
  */
 
 let f1 = function(){
-    // body
+    // now function value is assigned to variable as assignment statement
+    // so we need to put ;
 };  // require semicolon
 
 function f2(){
@@ -37,13 +49,19 @@ function f2(){
 }
 
 
-// Callback Functions
-// passing functions in another function
+/**
+ * 
+ *    Callback Functions
+ * 
+ *    : passing functions in another function
+ * 
+ * 
+ */
 
 function mul(a,b){
     return a*b;
-}
 function sub(a,b){
+}
     return a-b;
 }
 function div(a,b){
@@ -65,3 +83,14 @@ console.log(calc(10,20, sub));
 console.log(calc(10,20, mul));
 console.log(calc(10,20, div));
 console.log(calc(10,20, "add"));
+
+
+/**
+ * 
+ *   FUNCTION EXPRESSION vs FUNCTION DECLARATION
+ * 
+ *  : The more subtle difference is 
+ *    when a function is created by the JavaScript engine.
+ * 
+ *  : FE : delay the memory allocation for function
+ */

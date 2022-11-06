@@ -1,9 +1,15 @@
 /**
  * 
+ *    GARBAGE COLLECTION
+ *  
+ *  : Memory management in JavaScript is performed automatically 
+ *    and invisibly to us. We create primitives, objects, functions… 
+ *    All that takes memory.
  * 
  */
 
 // Reachability
+// The main concept of memory management in JavaScript is reachability.
 // reaching the var and function with the help of root and sub root
 
 

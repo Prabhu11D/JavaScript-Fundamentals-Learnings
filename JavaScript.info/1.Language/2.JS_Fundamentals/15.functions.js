@@ -1,11 +1,23 @@
 /**
  *           F U N C T I O N S
- *
+ *    
+ *    : main purposes of functions: to avoid code duplication.
  *
  *  -> minimizing the use of global var is good practice
  */
 
-// functions can access outer variable and it can modify it
+
+/**
+ * 
+ *   OUTER VARIABLE
+ * 
+ * 
+ *  : functions can access outer variable and it can modify it
+ *  : If a same-named variable is declared inside the function 
+ *    then it shadows the outer one.
+ *  : Global variables are visible from any function (unless shadowed by locals).
+ * 
+ */
 let username = "Prabhu";
 
 function change() {
@@ -26,32 +38,55 @@ function show() {
 console.log(name);
 show();
 
-// parameters
+
+/**
+ * 
+ *  PARAMETERS
+ *  
+ *  : We can pass arbitrary data to functions using parameters.
+ * 
+ */
 function add(n1, n2) {
   return n1 + n2;
 }
 
 console.log(add(10, 20));
 
-// default parameters
+
+// DEFAULT VALUES
 function add3(x, y, z = 1000) {
   return x + y + z;
 }
 console.log(add3(10, 20, 30));
 console.log(add3(10, 20));
 
+// old way of declaring default value
+function way1(x) {
+  if (x == undefined) x = "X";
+}
+
+function way2(x) {
+  x = x || 'X';
+}
+
+
 // alternative default parameters
 // whenever we call the function it stores the default parameter
 function love(name, lover) {
-  if (lover === undefined) {
-    lover = "Nobody";
-  }
+  lover = lover ?? 'Unknown';
 
   return name + " loves " + lover;
 }
+console.log(love("Prabhu"));
 console.log(love("Prabhu", "Ammu"));
 
-// return directive
+
+/**
+ * 
+ *  RETURN VALUES
+ * 
+ */
+
 function temperature(temp) {
   if (temp < 15) {
     return "It is so cold";
@@ -70,34 +105,41 @@ function temperature(temp) {
 console.log(temperature(60));
 
 // Empty return or without return
-function empty() {}
+function empty() { }
 
 function emptyReturn() {
   return;
 }
 
-console.log(empty());
-console.log(emptyReturn());
+console.log(empty() === undefined); // true
+console.log(emptyReturn() === undefined); // true 
 
-// use () for more line in return
-// return (...)
 
-// one function === one action
-// a function only perform one task as per it name
+/**
+ * 
+ *  NAMING FUNCTIONS
+ * 
+ *  : Functions are actions. So their name is usually a verb.
+ *  : One function – one action
+ *      : A function should do exactly what is suggested by its name, no more.
+ * 
+ */
+
 
 // functions == comment
-function showPrime(n){
-    for(let i = 2; i <= n; i++){
-        if(!isPrime(i)) continue
-        console.log(i + " is Prime");
-    }
+// this is self-describing function
+function showPrime(n) {
+  for (let i = 2; i <= n; i++) {
+    if (!isPrime(i)) continue
+    console.log(i + " is Prime");
+  }
 }
 
-function isPrime(n){
-    for(let i=2; i<n; i++){
-        if(n%i == 0) return false
-    }
-    return true
+function isPrime(n) {
+  for (let i = 2; i < n; i++) {
+    if (n % i == 0) return false
+  }
+  return true
 }
 
 showPrime(50);

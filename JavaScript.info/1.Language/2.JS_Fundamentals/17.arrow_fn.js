@@ -1,6 +1,7 @@
 /**
  *      A R R O W    F U N C T I O N
  * 
+ *    : better than function expression
  */
 
 let add = (a,b) => a+b;

@@ -1,5 +1,7 @@
 /**
- * 
+ *  The optional chaining ?. is a safe way to access 
+ *  nested object properties, even if an intermediate 
+ *  property doesn’t exist.
  * 
  */
 
@@ -16,3 +18,12 @@ let user = {
 }
 console.log(user.address ? user.address.street : undefined);
 console.log(user?.address?.street);
+
+let dummy = {
+  sayHi(){
+    console.log("SayHI");
+  }
+};
+
+dummy.sayHi?.();
+dummy.sayBye?.();
