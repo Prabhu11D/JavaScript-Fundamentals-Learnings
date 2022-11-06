@@ -16,6 +16,7 @@ let animal = {
 let elephant = {}
 elephant.__proto__ = animal;
 console.log(elephant.leg);
+console.log(elephant.__proto__)
 
 // =========================  writing doesn't use prototype
 
@@ -28,7 +29,7 @@ rabbit.walk = function(){
 }
 
 rabbit.walk();
-
+console.log(rabbit.__proto__)
 
 let user = {
     name : 'Prabhu',

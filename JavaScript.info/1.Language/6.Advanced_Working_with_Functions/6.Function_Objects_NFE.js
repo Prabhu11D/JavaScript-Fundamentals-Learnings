@@ -68,3 +68,39 @@ let shape = function(){
 let shape1 = shape;
 shape = null;
 shape1();
+
+
+
+
+let sayHii = function func(who) {
+  if (who) {
+    console.log(`Hello, ${who}`);
+  } else {
+    func("Guest"); // use func to re-call itself
+  }
+};
+
+sayHii(); // Hello, Guest
+
+// But this won't work:
+// func(); // Error, func is not defined (not visible outside of the function)
+
+/**
+ * 
+ * 
+    It allows the function to reference itself internally.
+    It is not visible outside of the function.
+
+    let sayHi = function(who) {
+      if (who) {
+        alert(`Hello, ${who}`);
+      } else {
+        sayHi("Guest");
+      }
+    };
+
+    The problem with that code is that sayHi may change in the outer code. 
+    If the function gets assigned to another variable instead, 
+    the code will start to give errors:
+ * 
+ */

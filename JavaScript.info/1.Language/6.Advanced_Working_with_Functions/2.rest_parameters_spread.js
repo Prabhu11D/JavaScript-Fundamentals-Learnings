@@ -1,5 +1,6 @@
 /**
- * 
+ *  if ... make multiple arg to single arg  -> REST
+ *  if ... makes single arg to multiple arg -> SPREAD
  * 
  */
 
