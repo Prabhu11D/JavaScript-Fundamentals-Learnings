@@ -12,9 +12,9 @@
 
 <script>
   /**
-   *
+   *    : The JavaScript specification calls that a host environment.
    *     window => DOM
-   *            => BOM
+   *            => BOM (except DOM, everything is BOM)
    *            => JavaScript
    *
    */
@@ -30,15 +30,17 @@
   document.body.style.background = "red";
   setTimeout(() => {
     document.body.style.background = "";
-  }, 500);
+  }, 3000);
 
   // - - - CSSOM - object model for CSS
 
   // ================== BOM
   // everything except DOM, it is host objects
+  // alert, comfirm, promt is also BOM
 
   console.log(location.href);
-  let redirect = confirm("Do you want to redirect the page to Google?");
+  // let redirect = confirm("Do you want to redirect the page to Google?");
+  let redirect = false;
   if (redirect == true) {
     setTimeout(() => {
       location.href = "https://google.com";

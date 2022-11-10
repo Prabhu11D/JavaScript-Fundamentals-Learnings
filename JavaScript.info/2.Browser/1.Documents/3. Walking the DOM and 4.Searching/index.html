@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node Traversing</title>
+  <script>
+    console.log(document.body); // null, becoz body in not read yet.
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p>Node Traversing</p>
+  <!-- Comment Node -->
+  <h3>Node
+    <ul>
+      <li>Element Node</li>
+      <li>Text Node</li>
+      <li>Comment Node</li>
+    </ul>
+  </h3>
+  <div id="elements">
+    <div id="red-elem">
+      <li id="red1">RED 1</li>
+      <li id="red2">RED 2</li>
+      <li id="red3">RED 3</li>
+    </div>
+    <div id="green-elem">GREEN</div>
+    <div id="blue-elem">BLUE</div>
+  </div>
+
+  <script src="navigation.js"></script>
+
+  <!-- LIVE COLLECTIONS -->
+  <div class="collections"></div>
+  <script>
+    const liveCollections = document.getElementsByClassName("collections");
+    const staticCollections = document.querySelectorAll(".collections");
+    console.group("collection");
+    console.log("live collections ", liveCollections.length);
+    console.log("static collections ", staticCollections.length);
+  </script>
+  <div class="collections"></div>
+  <script>
+    console.log("live collections ", liveCollections.length);
+    console.log("static collections ", staticCollections.length);
+    console.groupEnd();
+  </script>
+</body>
+
+</html>
